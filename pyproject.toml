@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "daycounter"
+version = "1.0.0"
+description = "Count calendar days between two dates"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+dependencies = []
+
+[project.scripts]
+daycounter = "daycounter.counter:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/daycounter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
