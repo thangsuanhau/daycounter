@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day Counter</title>
+    <script>
+        function clearResult() {
+            document.getElementById("result-box").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>📅 Day Counter</h1>
+    <form method="POST">
+        <label>Start Date (YYYY-MM-DD):</label>
+        <input type="text" name="start_date" required><br><br>
+
+        <label>End Date (optional, defaults to today):</label>
+        <input type="text" name="end_date"><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <div id="result-box">
+            <p>{{ result }}</p>
+            <button onclick="clearResult()">Clear Result</button>
+        </div>
+    {% endif %}
+</body>
+</html>
